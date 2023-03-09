@@ -1,2 +1,2 @@
 # Bubble-Sort
-Algoritmo de ordenação - Bubble Sotr
+Algoritmo de ordenação - Bubble Sort
