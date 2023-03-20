@@ -14,7 +14,7 @@ int main(){
     ordenaAlunos(n, p);
     ImprimeAluno(n, p);
     for (i = 0; i < n; i++){
-        fprintf(arch, "Nome: %s\nMatricula: %i\nNota: %f\n\n", p[i].nome, p[i].mat, p[i].nota);
+        fprintf(arch, "Nome: %s\nMatricula: %i\nNota: %f\n\n", p[i].nome, p[i].mat, p[i].doc);
     }
     fclose(arch);
     free(p); // Liberando espaço alocado dinamicamente
