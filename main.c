@@ -1,7 +1,6 @@
 #include "aluno.h"
 
 int main(){
-    setlocale(LC_ALL, "");
     FILE *arch = fopen("Lista de alunos.txt", "r+"); // Abre e cria um arquivo
     int n;                                          // Variavel que armazena e define a quantidade de pessoas que serão cadastradas
     int i;                                          // Variavel contadora
