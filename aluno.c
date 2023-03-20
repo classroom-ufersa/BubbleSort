@@ -25,7 +25,7 @@ void ordenaAlunos(int N, Aluno *Vet)
             // a função strcmp retorna 3 valores, 1, 0 e -1, mas neste caso não estamos comparando se as strings são maiores em questão
             // de quantidade de caracteres, mas sim, em relação ao codigo ascii
             if (r > 0) // Estrutura de decisão que realiza a ordenação caso a comparação feita anteriormente retorne valores maiores que 0,
-            // sinalizando que a primeira string é menor que a secunda em relação aos valores dos caracteres na tabela ascii
+            // sinalizando que a primeira string é menor que a segunda em relação aos valores dos caracteres na tabela ascii
             {
                 strcpy(temp, Vet[i].nome);
                 strcpy(Vet[i].nome, Vet[j].nome);
@@ -35,7 +35,7 @@ void ordenaAlunos(int N, Aluno *Vet)
     }
 }
 
-// Função que aloca um vetor de pessoas que retorna um vetor de pessoa e recebe a quantidade N de alunos como parâmetro
+// Função que aloca um vetor de alunos que retorna um vetor de alunos e recebe a quantidade N de alunos como parâmetro
 Aluno *AlocaAlunos(int N)
 {
     int i;                                         // Variavel contadora
