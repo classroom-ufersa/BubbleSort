@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "aluno.h"
 
 typedef struct aluno
 {
     char nome[100];
     int mat;
     int doc;
-} Aluno;
+}Aluno;
 
 void ordenaAlunos(int N, Aluno *Vet)
 {
