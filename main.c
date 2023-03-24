@@ -15,8 +15,9 @@ int main()
     // Atribuição do valor que será retornado da função que aloca um vetor para o ponteiro da struct do tipo Aluno
     Aluno *p = AlocaAlunos(n);
 
-    ordenaAlunos(n, p);
-    ImprimeAluno(n, p);
+    ordenaAlunos(n, p); // Função do Bubble Sort
+    ImprimeAluno(n, p); // Imprime os dados dos alunos no arquivo
+    
     for (i = 0; i < n; i++)
     {
         fprintf(arch, "Nome: %s\nMatricula: %i\nDocumento: %i\n\n", p[i].nome, p[i].mat, p[i].doc);

@@ -12,7 +12,7 @@ Ordena alfabeticamente o nome dos alunos. */
 void ordenaAlunos(int N, Aluno *Vet);
 
 /* Recebe como parâmetro um número inteiro "N" e uma struct "Aluno", não há retorno. 
-Imprime os dados dos alunos no arquivo. */
+Imprime os dados dos alunos no arquivo criado. */
 void ImprimeAluno(int N, Aluno *Vet);
 
 #endif
