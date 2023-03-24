@@ -1,6 +1,8 @@
 #ifndef ALUNO_H_INCLUDED
 #define ALUNO_H_INCLUDED
 
+typedef union documento Documento;
+
 typedef struct aluno Aluno;
 
 /* Recebe como parâmetro um número inteiro "N", retornado um vetor de "Aluno". 
