@@ -22,7 +22,8 @@ int main()
     }
 
     fclose(arch);
-    free(p); // Liberando espaço alocado dinamicamente da struct de "Aluno"
+    free(p); // Liberando espaço alocado dinamicamente da struct "Aluno"
+    free(d); // Liberando espaço alocado dinamicamente da union "Documento"
     printf("\nPrograma finalizado!\n");
     system("pause");
     printf("\n\n");
