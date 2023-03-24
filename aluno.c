@@ -49,11 +49,7 @@ Aluno *AlocaAlunos(int N){
         exit(1);
     }
 
-    Documento *d = (Documento*)malloc(sizeof(Documento));   //Criação de um ponteiro "d" e alocação de um vetor de "Documento"
-    if(d==NULL){
-        printf("Erro!");
-        exit(1);
-    }
+    
 
     for (i = 0; i < N; i++){
         printf("Qual documento deseja registrar? |CPF[1]|RG[2]| ");
@@ -73,6 +69,15 @@ Aluno *AlocaAlunos(int N){
     }  
     
     return p; // Retorna os dados inseridos pelo usuário
+}
+
+Documento* AlocaDocumento(void){
+    Documento *d = (Documento*)malloc(sizeof(Documento));   //Criação de um ponteiro "d" e alocação de um vetor de "Documento"
+    if(d==NULL){
+        printf("Erro!");
+        exit(1);
+    }
+    return d;
 }
 
 // Função que não retorna nada e recebe como parâmetro uma quantidade N de alunos a serem cadastradas e um vetor de alunos como parâmetro

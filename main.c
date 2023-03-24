@@ -14,6 +14,7 @@ int main()
     // Criação de ponteiro do tipo da struct Aluno. Chamada da função que será usada para alocar um vetor de Aluno
     // Atribuição do valor que será retornado da função que aloca um vetor para o ponteiro da struct do tipo Aluno
     Aluno* p= AlocaAlunos(n);
+    Documento* d= AlocaDocumento();
 
     ordenaAlunos(n, p);
     ImprimeAluno(n, p);
