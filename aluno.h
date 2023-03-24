@@ -9,6 +9,8 @@ typedef struct aluno Aluno;
 "N" corresponde ao tamanho do vetor de "Aluno". */
 Aluno *AlocaAlunos(int N);
 
+Documento* AlocaDocumento(void); //aloca union "Documento" e recebe void como parâmetro;
+
 /* Recebe como parâmetro um número inteiro "N" e uma struct "Aluno", não há retorno. 
 Ordena alfabeticamente o nome dos alunos. */
 void ordenaAlunos(int N, Aluno *Vet);
