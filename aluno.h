@@ -5,12 +5,11 @@ typedef union documento Documento;
 
 typedef struct aluno Aluno;
 
-/* Recebe como parâmetro um número inteiro "N", retornando um vetor de "Aluno". 
+/* Recebe como parametro um número inteiro "N", retornado um vetor de "Aluno". 
 "N" corresponde ao tamanho do vetor de "Aluno". */
-Aluno *AlocaAlunos(int N);
+Aluno *AlocaAlunos(FILE* arch);
 
-// Recebe void como parâmetro, alocando uma union "Documento", não há retorno.
-Documento* AlocaDocumento(void);
+Documento* AlocaDocumento(void); //aloca union "Documento" e recebe void como parâmetro;
 
 /* Recebe como parâmetro um número inteiro "N" e uma struct "Aluno", não há retorno. 
 Ordena alfabeticamente o nome dos alunos. */
