@@ -1,11 +1,8 @@
 # Bubble-Sort
-Algoritmos e Estrutura de Dados 1 - Unidade 2 - Algoritmo de ordenação - Bubble Sort
 
-### Grupo:
+Bubble Sort é um algoritmo de ordenação básica que ordena dados em ordem crescente, "flutuando" os dados mais "leves" para o início e os mais "pesados" para o final, assim como os alguns objetos flutuam ou não na água dependendo das suas carateristicas físicas.
 
-- Ana Santana de Araújo
-- Janiele Tainar da Silva
-- João Pedro Medeiros Nogueira Moura
-- Rafael Oliveira Freire
+---
 
-#
+
+
