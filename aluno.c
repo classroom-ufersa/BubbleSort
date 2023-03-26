@@ -56,45 +56,71 @@ T(O) = n²
 
 */
 
-// Função que aloca um vetor de alunos que retorna um vetor de alunos e recebe a quantidade N de alunos como parâmetro
 Aluno *AlocaAlunos(int N)
 {
+
     int i; // Variável de contagem
-    int op;
+    int op1, op2, op3; /* Declarações de variáveis responsáveis por delimitar as opções
+    da função "Aloca Alunos". Para cada opção um dado diferente será inserido pelo usuário ou não */
+    int n_qnt; // Variável usada para a realocação da struct "Aluno"
 
-    Aluno *p = (Aluno*)malloc(N * sizeof(Aluno)); // Criação de um ponteiro "p" e alocação de um vetor de "Aluno"
-    if(p==NULL)
+    printf("\n-Menu-\n\n");
+    printf("1 - Criar nova lista de alunos\n");
+    printf("2 - Cancelar\n: ");
+    scanf("%i", &op1);
+    if (op1 == 1)
     {
-        printf("Erro!");
-        exit(1);
-    }
+        printf("Digite a quantidade de alunos a serem cadastrados: ");
+        scanf("%i", &N);
+        Aluno *p = (Aluno*) malloc(N * sizeof(Aluno)); // Criação de um ponteiro "p" e alocação de um vetor de "Aluno"
 
-    for (i = 0; i < N; i++)
-    {
-        printf("Qual documento deseja registrar? |CPF[1]|RG[2]| ");
-        scanf("%i", &op);
-        if(op==1)
+        if(p==NULL)
         {
-            printf("\nInsira o nome, a matricula e o CPF do %i aluno: ", i + 1);
-            scanf("%s %i %i", p[i].nome, &p[i].mat, &p[i].d.CPF);
-        }
-        else if(op==2)
-        {
-            printf("\nInsira o nome, a matricula e o RG do %i aluno: ", i + 1);
-            scanf("%s %i %i", p[i].nome, &p[i].mat, &p[i].d.RG);
-        }
-        else{
-            printf("opcao invalida!");
+            printf("Erro!");
             exit(1);
         }
-    }  
-    
-    return p; // Retorna os dados inseridos pelo usuário
+
+        for (i = 0; i < N; i++)
+        {
+            printf("Qual documento deseja registrar?\n1 - CPF\n2 - RG2\n: ");
+            scanf("%i", &op2);
+            switch (op2)
+            {
+            case 1:
+                printf("\nInsira o nome, a matricula e o CPF do %i aluno: ", i + 1);
+                scanf("%s %i %i", p[i].nome, &p[i].mat, &p[i].d.CPF);
+                break;
+            case 2:
+                printf("\nInsira o nome, a matricula e o RG do %i aluno: ", i + 1);
+                scanf("%s %i %i", p[i].nome, &p[i].mat, &p[i].d.RG);
+            default:
+               break;
+            } 
+        }
+
+        printf("\nDeseja mudar a quantidade de alunos:\n1 - Sim\n0 - Nao\n: ");
+
+        if (op3 == 1)
+        {
+            Aluno * p1;
+            printf("\nDigite a nova quantidade: ");
+            scanf("%i", &n_qnt);
+            Aluno *p = (Aluno*) realloc((Aluno*)p1 ,n_qnt * sizeof(Aluno));
+        }
+        else
+        {
+            return p; // Retorna os dados inseridos pelo usuário
+        }
+    }
+    else
+    {
+        return 0; 
+    } 
 }
 
 Documento* AlocaDocumento(void)
 {
-    Documento *d = (Documento*)malloc(sizeof(Documento));   //Criação de um ponteiro "d" e alocação de um vetor de "Documento"
+    Documento *d = (Documento*) malloc(sizeof(Documento));   //Criação de um ponteiro "d" e alocação de um vetor de "Documento"
     if(d==NULL)
     {
         printf("Erro!");
@@ -103,7 +129,6 @@ Documento* AlocaDocumento(void)
     return d;
 }
 
-// Função que não retorna nada e recebe como parâmetro uma quantidade N de alunos a serem cadastradas e um vetor de alunos como parâmetro
 void ImprimeAluno(int N, Aluno *Vet){
     int i; // Variavel de contagem
 
