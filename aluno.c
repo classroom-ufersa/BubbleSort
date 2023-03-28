@@ -17,10 +17,9 @@ struct aluno{
 void OrdenaAlunos(int n, Aluno *Vet)
 {
     int i, j, r; // Variáveis de contagem "i" e "j". Variável utilizada para ordenar strings, quando o usuário deseja ordenar por nomes "r"
-    char temp[100]; // Variável temporária, porém, criada como variável do tipo "char"
+    char temp[100]; // Variável usada para guardar temporarialente o nome dos alunos no Bubble Sort
 
     // Laço de repetição usado para ordenar o vetor de acordo com o campo selecionado, neste caso, os nomes dos alunos
-    
     for (i = 0; i < n; i++) // n-1
     { 
         for (j = i + 1; j < n; j++) // n-1
@@ -54,7 +53,7 @@ T(O) = n²
 
 Aluno *AlocaAlunos(int n)
 {
-    int i, op; // Variavel de contagem e outra que guarda a opção escolhida pelo usuário
+    int i, op; // Variável de contagem e outra que guarda a opção escolhida pelo usuário
     
     Aluno *p = (Aluno*)malloc(n * sizeof(Aluno));
     if(p==NULL)
@@ -85,7 +84,6 @@ Aluno *AlocaAlunos(int n)
     return p; // Retorna os dados inseridos pelo usuário
 }
 
-// Função que não retorna nada e recebe como parâmetro uma quantidade N de alunos a serem cadastradas e um vetor de alunos como parâmetro
 void ImprimeAluno(int n, Aluno *Vet, FILE *arch)
 {
     int i; // Variavel de contagem
@@ -99,7 +97,7 @@ void ImprimeAluno(int n, Aluno *Vet, FILE *arch)
         printf("\nRG: %d\n", Vet[i].d.RG);
     }
 
-    for (i = 0; i < n; i++) // Implime dados dos alunos no arquivo
+    for (i = 0; i < n; i++) // Imprime dados dos alunos no arquivo
     {
         fprintf(arch, "Nome: %s\nMatricula: %i\nCPF: %d\nRG: %d\n\n", Vet[i].nome, Vet[i].mat, Vet[i].d.CPF, Vet[i].d.RG);   
     }

@@ -9,6 +9,6 @@ Aluno *AlocaAlunos(int n);
 Ordena alfabeticamente o nome dos alunos. */
 void OrdenaAlunos(int n, Aluno *Vet);
 
-/* Recebe como parâmetro um número inteiro "n" e uma struct "Aluno", não há retorno. 
-Imprime os dados dos alunos no arquivo. */
+/* Recebe como parâmetro um número inteiro "n", uma struct "Aluno" e um arquivo "FILE", não há retorno. 
+Imprime os dados dos alunos no terminal e no arquivo. */
 void ImprimeAluno(int n, Aluno *Vet, FILE *arch);
