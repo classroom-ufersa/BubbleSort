@@ -4,6 +4,10 @@
 #include "aluno.c"
 
 int main(){
+    
+    clock_t inicio, fim; // Variáveis para a contagem do tempo do algoritmo
+    double tempo_execucao; // Variável para guardar o tempo de execução do algoritmo
+    
     FILE *arch = fopen("ListaDeAlunos.txt", "w+"); // Abre e cria um arquivo no modo "write" (escrita)
     if(arch==NULL){
         printf("Erro ao abrir arquivo!");
@@ -29,5 +33,10 @@ int main(){
     printf("\nPrograma finalizado!\n");
     system("pause");
     printf("\n\n");
+    
+    fim = clock(); // "fim" recebe o tempo de execução
+    tempo_execucao = (double)(fim - inicio) / CLOCKS_PER_SEC; // "tempo_execucao" recebe o resultado da divisão entre tempo "inicio" e tempo "fim"
+    printf("Tempo de execução: %f segundos\n", tempo_execucao) // Amostragem do tempo de execução
+        
     return 0;
 }
