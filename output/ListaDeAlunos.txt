@@ -1,5 +1,0 @@
-Nome: q
-Matricula: 10
-CPF: 10
-RG: 0
-
