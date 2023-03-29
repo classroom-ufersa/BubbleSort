@@ -12,7 +12,7 @@ int main()
     
     FILE *arch = fopen("ListaDeAlunos.txt", "w"); // Abre e cria um arquivo no modo "write" (escrita)
 
-    // Análize se o arquivo foi  criado ou não
+    // Analisa se o arquivo foi  criado ou não
     if(arch != NULL){ 
         printf("\nArquivo criado!\n");
     }
@@ -26,7 +26,7 @@ int main()
     // Criação de um ponteiro "p" e alocação de um vetor struct "Aluno" por meio da função "AlocaAluno"
     Aluno* p= AlocaAlunos(n);
 
-    OrdenaAlunos(n, p); // Iplementação do Bubble Sort
+    OrdenaAlunos(n, p); // Implementação do Bubble Sort
     ImprimeAluno(n, p, arch); // Imprime dados dos alunos no terminal e no arquivo criado
 
     fclose(arch); // Fecha o arquivo criado

@@ -1,4 +1,4 @@
-typedef struct documento Documento;
+typedef union documento Documento;
 typedef struct aluno Aluno;
 
 /* Recebe como parametro um número inteiro "n", retornado um vetor de "Aluno". 

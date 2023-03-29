@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "aluno.h"
 
-struct documento{
+union documento{
     int CPF;
     int RG;
 };
@@ -64,7 +64,7 @@ Aluno *AlocaAlunos(int n)
 
     for (i = 0; i < n; i++)
     {
-        printf("\nDigite o nome do aluno: ");
+        printf("\nDigite o nome do aluno %i: ", i+1);
         scanf("%s", p[i].nome);
         printf("\nDigite a matricula: ");
         scanf("%i", &p[i].mat);
@@ -89,16 +89,14 @@ void ImprimeAluno(int n, Aluno *Vet, FILE *arch)
     int i; // Variavel de contagem
 
     // Laço de repetição que imprime os dados dos alunos que foram cadastradas pelo usuario
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++){
         printf("\nNome: %s", Vet[i].nome);
         printf("\nMatricula: %d", Vet[i].mat);
-        printf("\nCPF: %d\n", Vet[i].d.CPF);
-        printf("\nRG: %d\n", Vet[i].d.RG);
+        printf("\nDocumento: %d\n", Vet[i].d.CPF);
     }
 
     for (i = 0; i < n; i++) // Imprime dados dos alunos no arquivo
     {
-        fprintf(arch, "Nome: %s\nMatricula: %i\nCPF: %d\nRG: %d\n\n", Vet[i].nome, Vet[i].mat, Vet[i].d.CPF, Vet[i].d.RG);   
+        fprintf(arch, "Nome: %s\nMatricula: %i\nDocumento: %d\n\n", Vet[i].nome, Vet[i].mat, Vet[i].d.CPF);   
     }
 }
