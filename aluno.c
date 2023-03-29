@@ -20,22 +20,26 @@ void OrdenaAlunos(int n, Aluno *Vet)
     char temp[100]; // Variável usada para guardar temporarialente o nome dos alunos no Bubble Sort
 
     // Laço de repetição usado para ordenar o vetor de acordo com o campo selecionado, neste caso, os nomes dos alunos
-    for (i = 0; i < n; i++) // n-1
+    for (i = 0; i < n; i++) // acessa o primeira posição do vetor aluno // n-1
     { 
-        for (j = i + 1; j < n; j++) // n-1
+        for (j = i + 1; j < n; j++) // acessa uma posição adiante do vetor // n
         { 
             /* Atribuindo o valor da função strcmp à variável que auxilia na troca das strings.
             A função strcmp retorna 3 valores, 1, 0 e -1, mas neste caso, não estamos comparando
             se as strings sao maiores em questão de quantidade de caracteres, mas sim, em relação ao código ascii */
-            r = strcmp(Vet[i].nome, Vet[j].nome); // c1
+            r = strcmp(Vet[i].nome, Vet[j].nome); // compara se "Vet[i].nome" e maior que "Vet[j].nome" // "c1
+            
+            /* A função strcmp devolve um valor inteiro que indica o relacionamento entre Vet[i].nome e Vet[j].nome:
+            Um valor menor que zero significa que Vet[i].nome é menor que Vet[j].nome. Um valor zero significa que ambas as 
+            strings são iguais. Um valor maior que zero significa que Vet[i].nome é maior que Vet[j].nome. */
 
             /* Estrutura de decisão "if" que realiza a ordenação caso a comparação feita anteriormente retorne valores maiores que 0,
             sinalizando que a primeira string é menor que a segunda em relação aos valores dos caracteres na tabela ascii */
             if (r > 0) // c2
             { 
-                strcpy(temp, Vet[i].nome); // c3
-                strcpy(Vet[i].nome, Vet[j].nome); // c4
-                strcpy(Vet[j].nome, temp); // c5
+                strcpy(temp, Vet[i].nome); // copia a string de Vet[i].nome para a variável temp // c3
+                strcpy(Vet[i].nome, Vet[j].nome); // copia de Vet[j].nome pta Vet[i].nome // c4
+                strcpy(Vet[j].nome, temp); // copia de temp pra Vet[j].nome // c5
             }
         }
     }
@@ -45,9 +49,11 @@ void OrdenaAlunos(int n, Aluno *Vet)
 
 Complexidade da função "OrdenaAlunos" - Bubble Sort
 
-T(O) = n-1 + n-1 + c1 + c2 + c3+ c4 + c5
+T(O) = n + n-1 + c1 + c2 + c3+ c4 + c5
 T(O) = n² + 2n + C
 T(O) = n² 
+
+O(n²)
 
 */
 
