@@ -14,10 +14,10 @@ typedef struct aluno{
     Documento d;
 } Aluno;
 
-void OrdenaAlunos(int n, Aluno *Vet)
+void OrdenaAlunos(int n, Aluno *vetor)
 {
-    int i, j, recebe_comparacao; // Variáveis de contagem "i" e "j". Variável utilizada para ordenar strings, quando o usuário deseja ordenar por nomes "r"
-    char temp[100]; // Variável usada para guardar temporarialente o nome dos alunos no Bubble Sort
+    int i, j, recebe_comparacao; // Variáveis de contagem "i" e "j". Variável utilizada para ordenar strings, quando o usuário deseja ordenar por nomes "rebebe_comparacao"
+    char guarda_string[100]; // Variável usada para guardar temporarialente o nome dos alunos no Bubble Sort
 
     // Laço de repetição usado para ordenar o vetor de acordo com o campo selecionado, neste caso, os nomes dos alunos
     for (i = 0; i < n; i++) // acessa o primeira posição do vetor aluno // n
@@ -27,19 +27,19 @@ void OrdenaAlunos(int n, Aluno *Vet)
             /* Atribuindo o valor da função strcmp à variável que auxilia na troca das strings.
             A função strcmp retorna 3 valores, 1, 0 e -1, mas neste caso, não estamos comparando
             se as strings sao maiores em questão de quantidade de caracteres, mas sim, em relação ao código ascii */
-            recebe_comparacao = strcmp(Vet[i].nome, Vet[j].nome); // compara se "Vet[i].nome" e maior que "Vet[j].nome" // "c1
+            recebe_comparacao = strcmp(vetor[i].nome, vetor[j].nome); // compara se "vetor[i].nome" e maior que "vetor[j].nome" // "c1
             
-            /* A função strcmp devolve um valor inteiro que indica o relacionamento entre Vet[i].nome e Vet[j].nome:
-            Um valor menor que zero significa que Vet[i].nome é menor que Vet[j].nome. Um valor zero significa que ambas as 
-            strings são iguais. Um valor maior que zero significa que Vet[i].nome é maior que Vet[j].nome. */
+            /* A função strcmp devolve um valor inteiro que indica o relacionamento entre vetor[i].nome e vetor[j].nome:
+            Um valor menor que zero significa que vetor[i].nome é menor que vetor[j].nome. Um valor zero significa que ambas as 
+            strings são iguais. Um valor maior que zero significa que vetor[i].nome é maior que vetor[j].nome. */
 
             /* Estrutura de decisão "if" que realiza a ordenação caso a comparação feita anteriormente retorne valores maiores que 0,
             sinalizando que a primeira string é menor que a segunda em relação aos valores dos caracteres na tabela ascii */
             if (recebe_coomparacao > 0) // c2
             { 
-                strcpy(temp, Vet[i].nome); // copia a string de Vet[i].nome para a variável temp // c3
-                strcpy(Vet[i].nome, Vet[j].nome); // copia de Vet[j].nome pra Vet[i].nome // c4
-                strcpy(Vet[j].nome, temp); // copia de temp pra Vet[j].nome // c5
+                strcpy(guarda_string, vetor[i].nome); // copia a string de vetor[i].nome para a variável guarda_string // c3
+                strcpy(vetor[i].nome, Vet[j].nome); // copia de vetor[j].nome pra o vetor[i].nome // c4
+                strcpy(vetor[j].nome, guarda_string); // copia de guarda_string pra o vetor[j].nome // c5
             }
         }
     }
@@ -67,11 +67,11 @@ O(n)
 
 */
 
-Aluno *AlocaAlunos(int n)
+Aluno *AlocaAlunos(int numero_alunos)
 {
     int i, op; // Variável de contagem e outra que guarda a opção escolhida pelo usuário
     
-    Aluno *p = (Aluno*)malloc(n * sizeof(Aluno));
+    Aluno *vetor = (Aluno*)malloc(numero_alunos * sizeof(Aluno));
     if(p==NULL)
     {
         printf("Erro!");
@@ -81,38 +81,39 @@ Aluno *AlocaAlunos(int n)
     for (i = 0; i < n; i++)
     {
         printf("\nDigite o nome do aluno %i: ", i+1);
-        scanf("%s", p[i].nome);
+        scanf("%s", vetor[i].nome);
         printf("\nDigite a matricula: ");
-        scanf("%i", &p[i].mat);
+        scanf("%i", &vetor[i].mat);
         printf("\nDeseja registrar o (1)CPF ou o (2)RG: ");
         scanf("%i", &op);
         if (op == 1)
         {
             printf("\nDigite o CPF: ");
-            scanf("%d", &p[i].d.CPF);  
+            scanf("%d", &vetor[i].d.CPF);  
         }
         else if (op == 2)
         {
             printf("\nDigite O RG: ");
-            scanf("%d", &p[i].d.RG); 
+            scanf("%d", &vetor[i].d.RG); 
         }  
     }
     return p; // Retorna os dados inseridos pelo usuário
 }
 
-void ImprimeAluno(int n, Aluno *Vet, FILE *arch)
+void ImprimeAluno(int n, Aluno *vetor, FILE *arch)
 {
     int i; // Variavel de contagem
 
-    // Laço de repetição que imprime os dados dos alunos que foram cadastradas pelo usuario
+    // Laço de repetição que imprime os dados dos alunos que foram cadastradas pelo usuario no terminal
     for (i = 0; i < n; i++){
-        printf("\nNome: %s", Vet[i].nome);
-        printf("\nMatricula: %d", Vet[i].mat);
-        printf("\nDocumento: %d\n", Vet[i].d.CPF);
+        printf("\nNome: %s", vetor[i].nome);
+        printf("\nMatricula: %d", vetor[i].mat);
+        printf("\nDocumento(s): CPF - %d RG - %d\n", vetor[i].d.CPF, vetor[i].d.RG);
     }
-
-    for (i = 0; i < n; i++) // Imprime dados dos alunos no arquivo
+    
+    // Laço de repetição que imprime os dados dos alunos que foram cadastradas pelo usuario no arquivo
+    for (i = 0; i < n; i++) 
     {
-        fprintf(arch, "Nome: %s\nMatricula: %i\nDocumento: %d\n\n", Vet[i].nome, Vet[i].mat, Vet[i].d.CPF);   
+        fprintf(arch, "Nome: %s\nMatricula: %i\nDocumento(s): CPF - %d RG - %d\n\n", vetor[i].nome, vetor[i].mat, vetor[i].d.CPF, vetor[i].d.RG);   
     }
 }
