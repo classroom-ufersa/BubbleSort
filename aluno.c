@@ -20,9 +20,9 @@ void OrdenaAlunos(int n, Aluno *Vet)
     char temp[100]; // Variável usada para guardar temporarialente o nome dos alunos no Bubble Sort
 
     // Laço de repetição usado para ordenar o vetor de acordo com o campo selecionado, neste caso, os nomes dos alunos
-    for (i = 0; i < n; i++) // acessa o primeira posição do vetor aluno // n-1
+    for (i = 0; i < n; i++) // acessa o primeira posição do vetor aluno // n
     { 
-        for (j = i + 1; j < n; j++) // acessa uma posição adiante do vetor // n
+        for (j = i + 1; j < n; j++) // acessa uma posição adiante do vetor // n - 1
         { 
             /* Atribuindo o valor da função strcmp à variável que auxilia na troca das strings.
             A função strcmp retorna 3 valores, 1, 0 e -1, mas neste caso, não estamos comparando
@@ -106,15 +106,3 @@ void ImprimeAluno(int n, Aluno *Vet, FILE *arch)
         fprintf(arch, "Nome: %s\nMatricula: %i\nDocumento: %d\n\n", Vet[i].nome, Vet[i].mat, Vet[i].d.CPF);   
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
