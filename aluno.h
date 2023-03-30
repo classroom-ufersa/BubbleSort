@@ -1,6 +1,3 @@
-typedef union documento Documento;
-typedef struct aluno Aluno;
-
 /* Recebe como parametro um número inteiro "n", retornado um vetor de "Aluno". 
 "n" corresponde ao tamanho do vetor de "Aluno". */
 Aluno *AlocaAlunos(int n);

@@ -3,16 +3,16 @@
 #include <stdlib.h>
 #include "aluno.h"
 
-union documento{
+typedef union documento{
     int CPF;
     int RG;
-};
+} Documento;
 
-struct aluno{
+typedef struct aluno{
     char nome[100];
     int mat;
     Documento d;
-};
+} Aluno;
 
 void OrdenaAlunos(int n, Aluno *Vet)
 {
