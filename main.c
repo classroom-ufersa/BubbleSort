@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include "aluno.c"
-#include <time.h>
+#include <stdio.h> // Entrada e saída de dados
+#include <string.h> // Manipulação de strings
+#include <stdlib.h> // Alocação e liberação de memória
+#include <time.h> // Contagem do tempo do algoritmo
+#include "aluno.c" // TAD criada para funções relacionadas a struct "Aluno"
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
     
     FILE *arquivo = fopen("ListaDeAlunos.txt", "w"); // Abre e cria um arquivo no modo "write" (escrita)
 
-    // Analisa se o arquivo foi  criado ou não
+    // Análise se o arquivo foi  criado ou não
     if(arquivo != NULL){ 
         printf("\nArquivo criado!\n");
     }
@@ -23,7 +23,8 @@ int main()
     printf("\nInforme a quantidade de alunos a serem cadastradas: ");
     scanf("%d", &numero_alunos); // Lendo a quantidade de pessoas que serão cadastradas
     
-    // Criação de um ponteiro "p" e alocação de um vetor struct "Aluno" por meio da função "AlocaAluno"
+    /* Criação de um ponteiro "vetor_alunos" e alocação de um vetor struct "Aluno"
+    por meio da função "AlocaAluno" com o tamanho da variável "numero_alunos" */
     Aluno* vetor_alunos = AlocaAlunos(numero_alunos);
 
     OrdenaAlunos(numero_alunos, vetor_alunos); // Implementação do Bubble Sort
@@ -36,5 +37,5 @@ int main()
     tempo_execucao = (double)(fim - inicio) / CLOCKS_PER_SEC; // "tempo_execucao" recebe o resultado da divisão entre tempo "inicio" e tempo "fim"
     printf("\nTempo de execucao: %f segundos\n\n", tempo_execucao); // Amostragem do tempo de execução
         
-    return 0;
+    return 0; // Fim do execução
 }
