@@ -38,7 +38,7 @@ void OrdenaAlunos(int n, Aluno *Vet)
             if (r > 0) // c2
             { 
                 strcpy(temp, Vet[i].nome); // copia a string de Vet[i].nome para a variável temp // c3
-                strcpy(Vet[i].nome, Vet[j].nome); // copia de Vet[j].nome pta Vet[i].nome // c4
+                strcpy(Vet[i].nome, Vet[j].nome); // copia de Vet[j].nome pra Vet[i].nome // c4
                 strcpy(Vet[j].nome, temp); // copia de temp pra Vet[j].nome // c5
             }
         }
