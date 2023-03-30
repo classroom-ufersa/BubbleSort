@@ -49,11 +49,21 @@ void OrdenaAlunos(int n, Aluno *Vet)
 
 Complexidade da função "OrdenaAlunos" - Bubble Sort
 
+Pior caso:
+
 T(O) = n + n-1 + c1 + c2 + c3+ c4 + c5
-T(O) = n² + 2n + C
+T(O) = n * (n-1) / 2 + C
 T(O) = n² 
 
 O(n²)
+
+Melhor caso:
+
+T(O) = n + n-1 + c1 + c2 + c3+ c4 + c5
+T(O) = n + n-1 + C
+T(O) = n
+
+O(n)
 
 */
 
