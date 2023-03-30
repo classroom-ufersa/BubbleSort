@@ -106,3 +106,15 @@ void ImprimeAluno(int n, Aluno *Vet, FILE *arch)
         fprintf(arch, "Nome: %s\nMatricula: %i\nDocumento: %d\n\n", Vet[i].nome, Vet[i].mat, Vet[i].d.CPF);   
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
