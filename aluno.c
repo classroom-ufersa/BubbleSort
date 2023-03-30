@@ -16,7 +16,7 @@ typedef struct aluno{
 
 void OrdenaAlunos(int n, Aluno *Vet)
 {
-    int i, j, r; // Variáveis de contagem "i" e "j". Variável utilizada para ordenar strings, quando o usuário deseja ordenar por nomes "r"
+    int i, j, recebe_comparacao; // Variáveis de contagem "i" e "j". Variável utilizada para ordenar strings, quando o usuário deseja ordenar por nomes "r"
     char temp[100]; // Variável usada para guardar temporarialente o nome dos alunos no Bubble Sort
 
     // Laço de repetição usado para ordenar o vetor de acordo com o campo selecionado, neste caso, os nomes dos alunos
@@ -27,7 +27,7 @@ void OrdenaAlunos(int n, Aluno *Vet)
             /* Atribuindo o valor da função strcmp à variável que auxilia na troca das strings.
             A função strcmp retorna 3 valores, 1, 0 e -1, mas neste caso, não estamos comparando
             se as strings sao maiores em questão de quantidade de caracteres, mas sim, em relação ao código ascii */
-            r = strcmp(Vet[i].nome, Vet[j].nome); // compara se "Vet[i].nome" e maior que "Vet[j].nome" // "c1
+            recebe_comparacao = strcmp(Vet[i].nome, Vet[j].nome); // compara se "Vet[i].nome" e maior que "Vet[j].nome" // "c1
             
             /* A função strcmp devolve um valor inteiro que indica o relacionamento entre Vet[i].nome e Vet[j].nome:
             Um valor menor que zero significa que Vet[i].nome é menor que Vet[j].nome. Um valor zero significa que ambas as 
@@ -35,7 +35,7 @@ void OrdenaAlunos(int n, Aluno *Vet)
 
             /* Estrutura de decisão "if" que realiza a ordenação caso a comparação feita anteriormente retorne valores maiores que 0,
             sinalizando que a primeira string é menor que a segunda em relação aos valores dos caracteres na tabela ascii */
-            if (r > 0) // c2
+            if (recebe_coomparacao > 0) // c2
             { 
                 strcpy(temp, Vet[i].nome); // copia a string de Vet[i].nome para a variável temp // c3
                 strcpy(Vet[i].nome, Vet[j].nome); // copia de Vet[j].nome pra Vet[i].nome // c4
