@@ -105,7 +105,7 @@ Aluno *AlocaAlunos(int numero_alunos)
             scanf("%d", &vetor[i].d.RG); 
         }  
     }
-    return p; // Retorna os dados inseridos pelo usuário
+    return vetor; // Retorna os dados inseridos pelo usuário
 }
 
 void ImprimeAluno(int n, Aluno *vetor, FILE *arch)
